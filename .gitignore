@@ -1,9 +1,5 @@
-# Jekyll-generated folders and files
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-
-# Bundler-generated folders
-.bundle/
-vendor/
+dist/
+.sites/
+.qa/
+node_modules/
+*.tar.gz
