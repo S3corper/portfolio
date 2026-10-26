@@ -23,7 +23,9 @@ assert(shadowPage.includes('id="shadow-play"')&&shadowPage.includes('id="shadow-
 assert(shadowPage.includes('data-frame-base="../../assets/portfolio/shadow-frames/"'),'Shadow asset paths resolve from nested case study');
 assert.equal(files.filter(f=>f.endsWith('.ipynb')).length,6,'All original notebook downloads preserved');
 const campus=await readFile(path.join(root,'work/ucsd-drone/index.html'),'utf8');
-assert(campus.includes('data-load-scene')&&campus.includes('Open direct 3D viewer'),'Beta scene has interactive load and direct fallback');
+assert(campus.includes('data-load-scene')&&campus.includes('Load interactive 3D Scene'),'Campus scene loads interactively from the requested button');
+assert(campus.includes('https://admin-enterprise-gis.ucsd.edu/portal/apps/experiencebuilder/experience/?id=d7fcdb05a7734dc09b9b6f32ec83ec97'),'Campus scene points to the Experience Builder');
+assert(!campus.includes('Open campus experience')&&!campus.includes('Open direct 3D viewer'),'Removed legacy campus viewer links');
 assert(files.includes(path.join(root,'.nojekyll')),'Static GitHub Pages marker exists');
 for(const [,row] of home.matchAll(/<tr>(<td>[\s\S]*?)<\/tr>/g)){assert.equal((row.match(/<td>/g)||[]).length,3,'Skills rows have three opening cells');assert.equal((row.match(/<\/td>/g)||[]).length,3,'Skills rows have three closing cells');}
 const shadow=JSON.parse(await readFile(path.join(root,'assets/portfolio/shadow-frames/frames.json'),'utf8'));

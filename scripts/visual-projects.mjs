@@ -4,19 +4,21 @@ export const visualProjects = [
   {
     slug:'ucsd-drone', category:'Drone surveying / 3D GIS', filter:'fieldwork', course:'UC San Diego · Professional project',
     title:'A campus, captured in 3D.', subtitle:'From drone flights to the UC San Diego campus model',
-    description:'Around 52,000 aerial images, 22+ flight sessions, and a team effort to bring the campus into an explorable 3D scene.',
-    image:'ucsd-campus.webp', alt:'UC San Diego campus reconstructed from drone imagery in the beta 3D scene viewer',
-    tools:['Drone surveying','SiteScan','Reality Studio','ArcGIS Pro'], metric:'~52k', metricLabel:'drone images captured by the team',
+    description:'A team-built UC San Diego campus-scale 3D model, developed from drone imagery and supported by more than 550 ground control points.',
+    image:'ucsd-geisel-scene.png', alt:'Geisel Library and surrounding UC San Diego campus in the interactive 3D drone model',
+    tools:['Drone surveying','SiteScan','Reality Studio','ArcGIS Pro'], metric:'550+', metricLabel:'ground control points captured',
+    homeSceneUrl:campusViewer, homeHighlights:[['~52K','drone images captured'],['550+','ground control points captured'],['22+','drone missions flown']],
     role:'Drone flight observer / pilot, ground control point collection, and imagery processing', outcome:'22+ flight sessions · campus 3D viewer in beta',
-    figureCaption:'UC San Diego campus drone model. The linked scene viewer is a beta release and continues to evolve.',
-    sourceUrl:campusViewer, sourceLabel:'Explore the full campus model ↗', viewer:'https://admin-enterprise-gis.ucsd.edu/portal/apps/instant/3dviewer/index.html?appid=416dafe4255f491f811815adfe6d605f',
-    note:'The imagery and flight totals describe the team effort. Role and workflow are documented in my GIS résumé; the campus viewer remains in beta.',
+    figureCaption:'Geisel Library in the UC San Diego campus 3D model, reconstructed from drone imagery.',
+    sourceUrl:campusViewer, sourceLabel:'Load interactive 3D Scene ↗', viewer:campusViewer,
+    figures:[{image:'ucsd-campus.webp',alt:'Original UC San Diego campus 3D model image',caption:'A second view of the UC San Diego campus model from the original portfolio image.'}],
+    note:'',
     sections:[
       ['The project','A campus map becomes more useful when people can see the buildings, terrain, and spaces between them in three dimensions. Working with the UC San Diego team, I helped capture around 52,000 drone images across 22+ flight sessions to support a campus-scale 3D model.'],
       ['My contribution','As a Drone Flight Observer / Pilot &amp; GCP Collector from March 2025 to July 2026, I operated and assisted with campus drone surveys and collected and logged ground control points. I processed aerial imagery with ArcGIS SiteScan, ArcGIS Reality Studio, and ArcGIS Pro to create orthomosaics and 3D mapping products, including meshes and Gaussian splats.'],
-      ['From fieldwork to a scene','The workflow connects flight operations, ground reference measurements, imagery processing, and web delivery. Ground control points provide spatial reference for the reconstruction. The resulting products let users move from an overhead image to a view of building form and terrain. No numerical positional-accuracy assessment is reported here.'],
+      ['From fieldwork to a scene','The workflow connects flight operations, ground reference measurements, imagery processing, and web delivery. We captured 550+ ground control points to support the spatial accuracy of the model. The resulting products let users move from an overhead image to a view of building form and terrain.'],
       ['Explore the campus','The full beta scene includes saved viewpoints for places such as Geisel Library, Triton Center, and the colleges. Users can navigate the model, change the basemap, measure distances or areas, and explore daylight, weather, and shadow settings. These tools help communicate spatial relationships and viewing conditions; modeled shadows are simulations.'],
-      ['A collaborative model','The viewer credits imagery from the 2024–2025 academic year and collaboration with the Cultural Heritage Engineering Initiative (CHEI) Lab, including Scripps Institution of Oceanography drone operations and Geisel Library imagery. My contribution sits within that wider team effort. The beta viewer is the place to explore the complete model.']
+      ['A collaborative model','This 3D UCSD by Drone model was developed using aerial imagery collected during the 2024–2025 academic year. Special thanks to the UCSD Cultural Heritage Engineering Initiative (CHEI) Lab for collaborating on drone operations at the Scripps Institution of Oceanography (SIO), sharing knowledge, and providing drone imagery of Geisel Library. Thank you to OMCP for giving me the opportunity to contribute to this project.']
     ]
   },
   {
