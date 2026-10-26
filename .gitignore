@@ -1,5 +1,6 @@
 dist/
 .sites/
 .qa/
+.codex-tmp/
 node_modules/
 *.tar.gz
