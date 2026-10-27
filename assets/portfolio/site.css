@@ -18,3 +18,45 @@
 @media(max-width:700px){.scene-viewer{padding:20px}.scene-frame{height:480px}.scene-viewer h2{font-size:26px}.result{flex-wrap:wrap;gap:8px 18px}.project-art{padding:44px 15px 15px}.course-grid{grid-template-columns:1fr}}
 
 .campus-actions{gap:14px;flex-wrap:wrap}.campus-actions .button{gap:10px;padding:12px 16px;margin-top:0;white-space:nowrap}.campus-actions .project-bottom-link{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:550;white-space:nowrap;margin-left:auto}
+
+/* Theme control and dark palette */
+.theme-toggle{width:42px;height:42px;flex:0 0 42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:9px;background:var(--white);color:var(--ink);padding:0;transition:background .2s,border-color .2s,color .2s}
+.theme-toggle:hover{border-color:var(--blue);color:var(--blue)}
+.theme-icon{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.theme-icon-moon{display:none}
+html.theme-transition::view-transition-old(root),html.theme-transition::view-transition-new(root){animation-duration:1.15s;animation-timing-function:cubic-bezier(.4,0,.2,1)}
+html.theme-transition::view-transition-old(root){animation:none;z-index:1}
+html.theme-transition::view-transition-new(root){animation-name:theme-reveal;z-index:2}
+@keyframes theme-reveal{from{clip-path:circle(0 at var(--theme-origin-x) var(--theme-origin-y))}to{clip-path:circle(160vmax at var(--theme-origin-x) var(--theme-origin-y))}}
+.theme-reveal-fallback{position:fixed;inset:0;z-index:9999;overflow:hidden;pointer-events:none;transition:clip-path 1.15s cubic-bezier(.4,0,.2,1)}
+.social-link{display:inline-flex;align-items:center;gap:7px;color:inherit}
+.social-link:hover{color:var(--blue)}
+.social-icon{width:17px;height:17px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.github-link .social-icon{color:var(--blue)}
+.linkedin-link .social-icon{color:#4777c7}
+.email-link .social-icon{color:var(--muted)}
+.footer-links{align-items:center}
+html[data-theme="light"]{--ink:#182334;--muted:#5b6472;--blue:#244edb;--blue-soft:#eef2ff;--paper:#fafbf9;--line:#dfe3e8;--white:#fff;--green:#267663;color-scheme:light}
+html[data-theme="dark"]{--ink:#eef2f7;--muted:#b1bdcc;--blue:#9db6ff;--blue-soft:#1d2b45;--paper:#111821;--line:#334050;--white:#1a2531;--green:#73c5a7;color-scheme:dark}
+html[data-theme="dark"] body{background:var(--paper);color:var(--ink)}
+html[data-theme="dark"] .coursework-section{background:#151f2b}
+html[data-theme="dark"] .project,html[data-theme="dark"] .course,html[data-theme="dark"] .geo-label,html[data-theme="dark"] .case-figure,html[data-theme="dark"] .case-content aside,html[data-theme="dark"] .shadow-controls button{background:#1a2531;color:var(--ink)}
+html[data-theme="dark"] .project-art{background:#202d3b}
+html[data-theme="dark"] .lead-project .project-art{background:#202b3b}
+html[data-theme="dark"] .project-number{color:#bdc9d8}
+html[data-theme="dark"] .filter{border-color:#4a5868;color:var(--ink)}
+html[data-theme="dark"] .filter[aria-pressed=true]{background:#e5ebf4;color:#17202a;border-color:#e5ebf4}
+html[data-theme="dark"] .nav{color:var(--ink)}
+html[data-theme="dark"] .nav .contact-nav{border-color:var(--line)}
+html[data-theme="dark"] .nav.open{background:#1a2531}
+html[data-theme="dark"] .case-note,html[data-theme="dark"] .scene-viewer{background:#1a2531;border-color:var(--line)}
+html[data-theme="dark"] .skills-table th,html[data-theme="dark"] .skills-table td{border-color:var(--line)}
+html[data-theme="dark"] .contact-section{background:#202f42}
+html[data-theme="dark"] .contact-section .eyebrow{color:#c4d3f2}
+html[data-theme="dark"] .contact-form input,html[data-theme="dark"] .contact-form textarea{background:#111821;color:var(--ink)}
+html[data-theme="dark"] .button.secondary{color:var(--ink)}
+html[data-theme="dark"] .theme-icon-sun{display:none}
+html[data-theme="dark"] .theme-icon-moon{display:block}
+html[data-theme="dark"] .github-link .social-icon,html[data-theme="dark"] .linkedin-link .social-icon{color:#9db6ff}
+@media(max-width:700px){.site-header{gap:12px}.theme-toggle{margin-left:auto}.menu-toggle{order:3}}
+@media(prefers-reduced-motion:reduce){html.theme-transition::view-transition-new(root){animation:none}.theme-reveal-fallback{transition:none}}
